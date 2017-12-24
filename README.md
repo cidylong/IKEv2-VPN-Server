@@ -63,13 +63,5 @@ For CentOS 7:
 
 ## Supported Platforms
 - [x] CentOS 7
-- [ ] Ubuntu *(Planned)*
 
-*I have personally tested the scripts on a locally hosted virtual machine of the operating system. However, slight differences may occur in live production environments. If an error occurs, please raise an issue with as much detail as possible .*
-
-
-## Donate
-In my spare time, I develop these scripts. If you find any useful, or want to help buy me a coffee, donations are welcome at the following Bitcoin Address:
-```
-165wpnX1Tfd7BJMJWtX4TqUh28wtUK3ZaT
-```
+* These scripts have been tested on a locally hosted virtual machine of the operating system. However, slight differences may occur in live production environments. If an error occurs, please raise an issue with as much detail as possible .*
