@@ -1,0 +1,35 @@
+When VPN server seating behind NAT, which means VPN host seating behind DSL gateway, configured gateway (NAT) with http, https, ssh point to VPN host. Hostname is full certified with DNS look up.
+
+Then run CentOS-7.sh message shows:
+
+ ./CentOS-7.sh
+[INFOR] HTTPS/Port 443 MUST BE ALLOWED THROUGH YOUR FIREWALL FOR CERT GENERATION!:
+[INPUT] Enter Email Address:
+cccc@xxxxx.com.au
+[INPUT] Enter Hostname (Must resolve to server IP, via DNS):
+www.xxxxx.com.au
+[INPUT] Enter SSH Port (To Configure Firewall):
+22
+[SUCCESS] Updated system and pre-installed packages.
+[SUCCESS] Installed additional packages.
+[ERROR] Unable to generate certificates!
+[SUCCESS] Configured VPN.
+[SUCCESS] Configured firewall.
+Created symlink from /etc/systemd/system/multi-user.target.wants/strongswan.service to /usr/lib/systemd/system/strongswan.service.
+[INFO] USERS NEED TO BE ADDED! VISIT THE REPO WIKI TO ADD USERS!
+
+run certbot individually with correct email and hostname as:
+[root@centos Linux]# certbot certonly --non-interactive --agree-tos --email cccc@xxxxx.com.au --standalone -d www.xxxxx.com.au
+Error message as:
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator standalone, Installer None
+Starting new HTTPS connection (1): acme-v01.api.letsencrypt.org
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for www.xxxxx.com.au
+Cleaning up challenges
+Problem binding to port 80: Could not bind to IPv4 or IPv6.
+
+Maybe caused by there is a web server running on VPN server as well, Not sure!
+
+Please advise!
